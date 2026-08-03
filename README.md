@@ -4,7 +4,7 @@ This repository contains the R code and selected outputs associated with the pap
 
 > **Evaluating statistical methods for modeling and forecasting hourly precipitation**  
 > Rohan Hemant Chhatre, James O'Donnell, Nalini Ravishanker
-> Japanese Journal of Data
+> Japanese Journal of Statistics and Data Science
 
 The project develops and evaluates probabilistic precipitation forecasting models based on a zero-adjusted gamma (ZAGA) distribution fitted using component-wise gradient boosting. Forecast performance is compared with benchmark and machine-learning approaches across weather stations in Connecticut, USA.
 
