@@ -60,9 +60,7 @@ Additional packages required by individual model-fitting scripts should be insta
 ## Data
 
 The original weather data are not publicly available due to data-use restrictions and file size limitations. Researchers interested in accessing the data may request it by contacting the corresponding author.
-Corresponding author:
-Rohan Chhatre
-Email: `fbs24003@uconn.edu`
+Corresponding author: Rohan Chhatre (`fbs24003@uconn.edu`)
 
 ## Running the analysis
 
