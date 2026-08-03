@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying paper."
+title: "Code for: Evaluating Statistical Methods for Modeling and forecasting Hourly Precipitation"
+type: software
+authors:
+  - family-names: "Chhatre"
+    given-names: "Rohan Hemant"
+    orcid: "https://orcid.org/[YOUR-ORCID]"
+  - family-names: "O'Donnell"
+    given-names: "James"
+  - family-names: "Ravishanker"
+    given-names: "Nalini"
+repository-code: "https://github.com/Rohan-Chhatre/zaga_gamboost_precipitation"
+version: "1.0.0"
+date-released: "2026-07-15"
+preferred-citation:
+  type: article
+  title: "Evaluating Statistical Methods for Modeling and forecasting Hourly Precipitation"
+  authors:
+    - family-names: "Chhatre"
+      given-names: "Rohan Hemant"
+    - family-names: "O'Donnell"
+      given-names: "James"
+    - family-names: "Ravishanker"
+      given-names: "Nalini"
+  journal: "Japanese Journal of Statistics and Data Science"
+  year: 2026
+  doi: "[DOI]"
