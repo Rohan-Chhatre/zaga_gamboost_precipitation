@@ -15,7 +15,7 @@ version: "1.0.0"
 date-released: "2026-07-15"
 preferred-citation:
   type: article
-  title: "Evaluating Statistical Methods for Modeling and forecasting Hourly Precipitation"
+  title: "Evaluating Statistical Methods for Modeling and Forecasting Hourly Precipitation"
   authors:
     - family-names: "Chhatre"
       given-names: "Rohan Hemant"
@@ -25,4 +25,4 @@ preferred-citation:
       given-names: "Nalini"
   journal: "Japanese Journal of Statistics and Data Science"
   year: 2026
-  doi: "[DOI]"
+  doi: "https://doi.org/10.1007/s42081-026-00366-w"
