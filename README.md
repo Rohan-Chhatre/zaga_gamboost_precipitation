@@ -13,13 +13,13 @@ The project develops and evaluates probabilistic precipitation forecasting model
 .
 ├── code/
 │   ├── revisions/              # Code prepared during manuscript revisions.
-│       ├── run_gamboost_meriden_all_final_rolling.R # Code for Model 3 from the paper.
-│       ├── run_gamboost_meriden_rainonly_final_rolling.R # Code for Model 1 from the paper.
-│       ├── run_gamboost_meriden_exogenous_final_rolling.R # Code for Model 2 from the paper.
-│       ├── run_arima_meriden_rolling.R # Code for ARIMA modelfrom the paper.
-│       ├── run_persistence_meriden_rolling.R # Code for Persistence model from the paper.
-│       ├── run_random_forest_meriden_rolling.R # Code for Random Forest model from the paper.
-│       ├── run_lstm_meriden_rolling.R # Code for LSTM from the paper.
+│       ├── run_gamboost_meriden_all_final_rolling.R              # Code for Model 3 from the paper.
+│       ├── run_gamboost_meriden_rainonly_final_rolling.R              # Code for Model 1 from the paper.
+│       ├── run_gamboost_meriden_exogenous_final_rolling.R              # Code for Model 2 from the paper.
+│       ├── run_arima_meriden_rolling.R              # Code for ARIMA modelfrom the paper.
+│       ├── run_persistence_meriden_rolling.R              # Code for Persistence model from the paper.
+│       ├── run_random_forest_meriden_rolling.R              # Code for Random Forest model from the paper.
+│       ├── run_lstm_meriden_rolling.R              # Code for LSTM from the paper.
 │   ├── old code/               # Earlier development scripts retained for reference
 │   ├── ct_map.R                # Map of the Connecticut weather stations
 │   ├── events.R                # Event-based forecast comparisons
