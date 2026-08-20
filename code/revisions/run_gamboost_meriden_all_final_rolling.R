@@ -710,20 +710,74 @@ results <- foreach(
       control  = boost_control(mstop = 50, nu = 0.01)
     )
     
-    mu_te <- as.numeric(
-      predict(fit.gb, newdata = dte, parameter = "mu", type = "response")
-    )
-    
-    sigma_te <- as.numeric(
-      predict(fit.gb, newdata = dte, parameter = "sigma", type = "response")
-    )
-    
-    nu_te <- as.numeric(
-      predict(fit.gb, newdata = dte, parameter = "nu", type = "response")
-    )
-    
-    pred_te <- (1 - nu_te) * mu_te
-    
+# ============================================================
+# RECURSIVE 120-HOUR FORECAST
+# ============================================================
+
+dte_recursive <- copy(test_dt)
+
+mu_te    <- numeric(horizon_hours)
+sigma_te <- numeric(horizon_hours)
+nu_te    <- numeric(horizon_hours)
+pred_te  <- numeric(horizon_hours)
+
+for (h in seq_len(horizon_hours)) {
+
+  # ----------------------------------------------------------
+  # From h >= 2, replace Meriden rainfall lags that refer to
+  # validation-period observations with previous predictions
+  # ----------------------------------------------------------
+
+  for (lag in 1:L) {
+
+    previous_h <- h - lag
+
+    if (previous_h >= 1) {
+
+            dte_recursive[
+              h,
+              (paste0("rain_", target_code, "_lag", lag)) :=
+                log1p(pred_te[previous_h])
+            ]
+          }
+        }
+      
+        # Convert current row to data.frame for predict()
+        new_row <- as.data.frame(
+          dte_recursive[h, !"DATE"]
+        )
+      
+        # Distributional predictions
+        mu_te[h] <- as.numeric(
+          predict(
+            fit.gb,
+            newdata = new_row,
+            parameter = "mu",
+            type = "response"
+          )
+        )
+      
+        sigma_te[h] <- as.numeric(
+          predict(
+            fit.gb,
+            newdata = new_row,
+            parameter = "sigma",
+            type = "response"
+          )
+        )
+      
+        nu_te[h] <- as.numeric(
+          predict(
+            fit.gb,
+            newdata = new_row,
+            parameter = "nu",
+            type = "response"
+          )
+        )
+      
+        # Expected rainfall
+        pred_te[h] <- (1 - nu_te[h]) * mu_te[h]
+      }    
     lo80_te <- gamlss.dist::qZAGA(
       0.10, mu = mu_te, sigma = sigma_te, nu = nu_te
     )
